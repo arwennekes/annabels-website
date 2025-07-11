@@ -1,15 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annabels Website</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Size Estimator</title>
+  <style>
+    body {
+      background: #181c24;
+      color: #fff;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .cards {
+      display: flex;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .card-btn {
+      background: #23283a;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .card-btn.selected {
+      background: #4f8cff;
+    }
+    .hidden { display: none; }
+    .results {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+    }
+    .countdown {
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+    button#start-btn {
+      background: #4f8cff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">Annabels Website</h1>
-        <p class="subtitle">Welcome to my test website!</p>
-    </div>
+  <h1>Ticket Size Estimator</h1>
+  <div class="cards" id="cards"></div>
+  <button id="start-btn">Start Countdown</button>
+  <div class="countdown hidden" id="countdown"></div>
+  <div class="results hidden" id="results"></div>
+  <script src="estimator-frontend.js"></script>
 </body>
 </html> 
